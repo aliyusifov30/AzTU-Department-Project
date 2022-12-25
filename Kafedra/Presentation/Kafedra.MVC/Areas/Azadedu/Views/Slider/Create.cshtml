@@ -1,0 +1,28 @@
+﻿
+
+
+@using Kafedra.Application.ViewModel.SliderVM
+@model CreateSliderVM
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="w-100">
+<h1 style="text-align:center;" class="my-3">Create</h1>
+
+ <div class="card-body card-block ">
+                <form method="post" enctype="multipart/form-data" class="" >
+                    <div class="form-group">
+                        <label for="nf-name" asp-for="Photo"   class=" form-control-label">Select Images</label>
+                        <input asp-for="Photo"   class="form-control btn btn-dark " autocomplete="off" accept="image/*">
+                        <span class="text-danger" asp-validation-for="Photo"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary m-2 p-2" style="border-radius:15px;">
+                        <i class="fa fa-dot-circle-o"></i> Save
+                    </button>
+                    <a asp-action="Index" class="btn btn-danger m-2 p-2" style="border-radius:15px;">
+                        <i class="fa fa-ban"></i> Cancel
+                    </a>
+                </form>
+               
+            </div>
+            </div>

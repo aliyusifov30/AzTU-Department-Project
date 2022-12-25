@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = null;
+}
+<div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" asp-controller="Home" asp-action="Index"><img src="~/assets/img/aztu_s_logo.png" alt="logo" /></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span><i class="fa-solid fa-bars"></i></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="About" asp-action="Index">Haqqımızda</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="ScientificWorks" asp-action="Index">Elmi işlərimiz</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Team" asp-action="Index">Heyət</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Subject" asp-action="Index">Fənnlər</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Contact" asp-action="Index">Əlaqə</a>
+                            </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link disabled">@User.Identity.Name</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " asp-action="LogOut" asp-controller="Account">LogOut</a>
+                        </li>
+                        
+                    }
+                    else{
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Account" asp-action="Login">Daxil ol</a>
+                            </li>
+                    }
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
