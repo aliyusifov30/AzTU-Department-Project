@@ -1,0 +1,21 @@
+﻿
+
+.row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.row .content-wrapper{
+    width:100% !important;
+}
+
+.content-wrapper{
+    margin-left:9% !important;
+}
+#toaster-error {
+    background-color: black !important;
+}
+
+#toaster-success {
+    background-color: black !important;
+}

@@ -1,0 +1,24 @@
+﻿@using Kafedra.Application.ViewModel.AnnouncementVM
+
+@model CreateAnnouncementsVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="mt-5 mx-5">Create</h1>
+
+<form method="post"  class ="m-5">
+    
+   
+                            <p>Title</p>
+
+                            <input asp-for="Title" required>
+                      
+        
+            <p>Content</p>
+                            <textarea asp-for="Content" typeof="text" type="text" required></textarea>
+                        
+                       
+                            <button class="btn btn-primary" type="submit" >Create</button>
+                       
+</form>
