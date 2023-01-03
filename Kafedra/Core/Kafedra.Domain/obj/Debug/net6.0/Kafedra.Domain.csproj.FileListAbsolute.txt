@@ -1,0 +1,12 @@
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Core\Kafedra.Domain\bin\Debug\net6.0\Kafedra.Domain.deps.json
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Core\Kafedra.Domain\bin\Debug\net6.0\Kafedra.Domain.dll
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Core\Kafedra.Domain\bin\Debug\net6.0\Kafedra.Domain.pdb
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Core\Kafedra.Domain\obj\Debug\net6.0\Kafedra.Domain.csproj.AssemblyReference.cache
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Core\Kafedra.Domain\obj\Debug\net6.0\Kafedra.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Core\Kafedra.Domain\obj\Debug\net6.0\Kafedra.Domain.AssemblyInfoInputs.cache
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Core\Kafedra.Domain\obj\Debug\net6.0\Kafedra.Domain.AssemblyInfo.cs
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Core\Kafedra.Domain\obj\Debug\net6.0\Kafedra.Domain.csproj.CoreCompileInputs.cache
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Core\Kafedra.Domain\obj\Debug\net6.0\Kafedra.Domain.dll
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Core\Kafedra.Domain\obj\Debug\net6.0\refint\Kafedra.Domain.dll
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Core\Kafedra.Domain\obj\Debug\net6.0\Kafedra.Domain.pdb
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Core\Kafedra.Domain\obj\Debug\net6.0\ref\Kafedra.Domain.dll

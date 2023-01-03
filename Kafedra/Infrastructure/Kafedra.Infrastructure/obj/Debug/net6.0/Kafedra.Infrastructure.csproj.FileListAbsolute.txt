@@ -1,0 +1,17 @@
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Infrastructure\Kafedra.Infrastructure\bin\Debug\net6.0\Kafedra.Infrastructure.deps.json
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Infrastructure\Kafedra.Infrastructure\bin\Debug\net6.0\Kafedra.Infrastructure.dll
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Infrastructure\Kafedra.Infrastructure\bin\Debug\net6.0\Kafedra.Infrastructure.pdb
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Infrastructure\Kafedra.Infrastructure\bin\Debug\net6.0\Kafedra.Application.dll
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Infrastructure\Kafedra.Infrastructure\bin\Debug\net6.0\Kafedra.Domain.dll
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Infrastructure\Kafedra.Infrastructure\bin\Debug\net6.0\Kafedra.Application.pdb
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Infrastructure\Kafedra.Infrastructure\bin\Debug\net6.0\Kafedra.Domain.pdb
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Infrastructure\Kafedra.Infrastructure\obj\Debug\net6.0\Kafedra.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Infrastructure\Kafedra.Infrastructure\obj\Debug\net6.0\Kafedra.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Infrastructure\Kafedra.Infrastructure\obj\Debug\net6.0\Kafedra.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Infrastructure\Kafedra.Infrastructure\obj\Debug\net6.0\Kafedra.Infrastructure.AssemblyInfo.cs
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Infrastructure\Kafedra.Infrastructure\obj\Debug\net6.0\Kafedra.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Infrastructure\Kafedra.Infrastructure\obj\Debug\net6.0\Kafedra.Infrastructure.csproj.CopyComplete
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Infrastructure\Kafedra.Infrastructure\obj\Debug\net6.0\Kafedra.Infrastructure.dll
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Infrastructure\Kafedra.Infrastructure\obj\Debug\net6.0\refint\Kafedra.Infrastructure.dll
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Infrastructure\Kafedra.Infrastructure\obj\Debug\net6.0\Kafedra.Infrastructure.pdb
+C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Infrastructure\Kafedra.Infrastructure\obj\Debug\net6.0\ref\Kafedra.Infrastructure.dll

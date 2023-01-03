@@ -1,0 +1,173 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Kafedra.MVC
+build_property.RootNamespace = Kafedra.MVC
+build_property.ProjectDir = C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Presentation\Kafedra.MVC\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\SWIFT\Desktop\AzTU-Department-Project\Kafedra\Presentation\Kafedra.MVC
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Areas/Azadedu/Views/Announcement/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXphZGVkdVxWaWV3c1xBbm5vdW5jZW1lbnRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Areas/Azadedu/Views/Announcement/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXphZGVkdVxWaWV3c1xBbm5vdW5jZW1lbnRcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Areas/Azadedu/Views/Announcement/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXphZGVkdVxWaWV3c1xBbm5vdW5jZW1lbnRcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Areas/Azadedu/Views/Announcement/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXphZGVkdVxWaWV3c1xBbm5vdW5jZW1lbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Areas/Azadedu/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXphZGVkdVxWaWV3c1xEYXNoYm9hcmRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Areas/Azadedu/Views/Event/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXphZGVkdVxWaWV3c1xFdmVudFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Areas/Azadedu/Views/Event/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXphZGVkdVxWaWV3c1xFdmVudFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Areas/Azadedu/Views/Event/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXphZGVkdVxWaWV3c1xFdmVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Areas/Azadedu/Views/Setting/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXphZGVkdVxWaWV3c1xTZXR0aW5nXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Areas/Azadedu/Views/Setting/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXphZGVkdVxWaWV3c1xTZXR0aW5nXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Areas/Azadedu/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXphZGVkdVxWaWV3c1xTaGFyZWRcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Areas/Azadedu/Views/Shared/_ValidationPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXphZGVkdVxWaWV3c1xTaGFyZWRcX1ZhbGlkYXRpb25QYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Areas/Azadedu/Views/Slider/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXphZGVkdVxWaWV3c1xTbGlkZXJcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Areas/Azadedu/Views/Slider/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXphZGVkdVxWaWV3c1xTbGlkZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Areas/Azadedu/Views/Subject/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXphZGVkdVxWaWV3c1xTdWJqZWN0XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Areas/Azadedu/Views/Subject/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXphZGVkdVxWaWV3c1xTdWJqZWN0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Areas/Azadedu/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXphZGVkdVxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Areas/Azadedu/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXphZGVkdVxWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Views/About/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Views/Account/ConfirmEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Views/Account/SuccessRegistration.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTdWNjZXNzUmVnaXN0cmF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Views/Account/View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Views/Contact/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Views/Dissertation/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzc2VydGF0aW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Views/Event/AllEvents.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcQWxsRXZlbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Views/Event/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Views/ScientificWorks/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NpZW50aWZpY1dvcmtzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Views/Shared/Components/Footer/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRm9vdGVyXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Views/Shared/Components/Navbar/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTmF2YmFyXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Views/Subject/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Views/Teacher/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Views/Team/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SWIFT/Desktop/AzTU-Department-Project/Kafedra/Presentation/Kafedra.MVC/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

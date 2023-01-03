@@ -70,7 +70,7 @@
                     {
                         <div class="news-card">
                             <a href="#" class="news-card__card-link"></a>
-                            <img src="~/assets/img/@ev.Image"
+                            <img src="~/uploads/events/@ev.Image"
                              alt=""
                              class="news-card__image" />
                             <div class="news-card__text-wrapper">
@@ -79,9 +79,8 @@
                                 </h2>
                                 <div class="news-card__post-date">@ev.CreatedAt</div>
                                 <div class="news-card__details-wrapper">
-                                    <p class="news-card__excerpt">
-                                        @ev.Content
-                                    </p>
+
+                                    @Html.Raw(ev.Content)
                                     <a asp-controller="Event" asp-action="Detail" asp-route-id="@ev.Id" class="news-card__read-more">
                                         Read more <i class="fas fa-long-arrow-alt-right"></i>
                                     </a>

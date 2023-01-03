@@ -1,6 +1,9 @@
-﻿using Kafedra.Application.Interfaces.Repostories.Common;
+﻿using Kafedra.Application.DTOs;
+using Kafedra.Application.Interfaces.Repostories.Common;
 using Kafedra.Application.ViewModel.Home;
+using Kafedra.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
 namespace Kafedra.MVC.Controllers
@@ -13,13 +16,17 @@ namespace Kafedra.MVC.Controllers
         {
             _eventRepository = eventRepository;
         }
-        public async Task<IActionResult> AllEvents()
+        public async Task<IActionResult> AllEvents(int page = 1)
         {
-            HomeVM home = new HomeVM()
-            {
-                Events = await _eventRepository.GetAll().OrderByDescending(x => x.Id).ToListAsync(),
-            };
-            return View(home);
+            var events = _eventRepository.GetAll();
+            ViewBag.PageSize = 1;
+            return View(PagenatedListDto<Event>.Save(events, page, 1));
+
+            //HomeVM home = new HomeVM()
+            //{
+            //    Events = await _eventRepository.GetAll().OrderByDescending(x => x.Id).ToListAsync(),
+            //};
+            //return View(home);
         }
         public async Task<IActionResult> Detail(int id)
         {

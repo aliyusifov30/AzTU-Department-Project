@@ -1,5 +1,7 @@
 ﻿@using Kafedra.Application.ViewModel.Home
-@model HomeVM
+
+@model PagenatedListDto<Event>
+
 @{
     ViewData["Title"] = "AllEvent";
 }
@@ -10,12 +12,12 @@
     </div>
     <div class="container py-5">
       <div class="my-3 row">
-        @foreach (var ev in Model.Events)
+        @foreach (var ev in Model)
         {
             <div class="news-card">
           <a href="#" class="news-card__card-link"></a>
           <img
-            src="~/assets/img/@ev.Image"
+            src="~/uploads/events/@ev.Image"
             alt=""
             class="news-card__image"
           />
@@ -25,9 +27,7 @@
             </h2>
             <div class="news-card__post-date">Jan 29, 2018</div>
             <div class="news-card__details-wrapper">
-              <p class="news-card__excerpt">
-                @ev.Content
-              </p>
+                @Html.Raw(ev.Content)
               <a asp-controller="Event" asp-action="Detail" asp-route-id="@ev.Id" class="news-card__read-more"
                 >Read more <i class="fas fa-long-arrow-alt-right"></i
               ></a>
@@ -36,7 +36,47 @@
         </div>
         }
       </div>
-      <nav aria-label="...">
+
+    <nav aria-label="Page navigation example" class="d-flex justify-content-center align-items-center">
+        <ul class="pagination">
+
+            @if (Model.HasPrev)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-action="AllEvents" asp-controller="event" asp-route-page="@(Model.PageIndex - 1)" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            }
+            @for (int i = 1; i <= Model.TotalPage; i++)
+            {
+                if (Model.PageIndex - 1 == i)
+                {
+                    <li class="page-item"><a class="page-link" asp-action="AllEvents" asp-controller="event" asp-route-page="@i">@i</a></li>
+                }
+
+                if (Model.PageIndex == i)
+                {
+                    <li class="page-item active"><a class="page-link" style=" z-index: 3; color: #fff; background-color: #232878 !important; border-color: #232878 !important;" asp-action="AllEvents" asp-controller="event" asp-route-page="@i">@i</a></li>
+                }
+                if (Model.PageIndex + 1 == i)
+                {
+                    <li class="page-item"><a class="page-link" asp-action="AllEvents" asp-controller="event" asp-route-page="@i">@i</a></li>
+                }
+            }
+            @if (Model.HasNext)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-action="AllEvents" asp-controller="event" asp-route-page="@(Model.PageIndex + 1)" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            }
+
+        </ul>
+    </nav>
+
+      @*<nav aria-label="...">
         <ul class="pagination">
           <li class="page-item disabled">
             <a class="page-link">Previous</a>
@@ -50,6 +90,8 @@
             <a class="page-link" href="#">Next</a>
           </li>
         </ul>
-      </nav>
+      </nav>*@
+
+
     </div>
 
