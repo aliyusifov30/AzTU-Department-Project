@@ -17,7 +17,7 @@ namespace Kafedra.Persistence.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.1")
+                .HasAnnotation("ProductVersion", "6.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -75,6 +75,9 @@ namespace Kafedra.Persistence.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("SubjectId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -153,26 +156,8 @@ namespace Kafedra.Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Author")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DefenseYear")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("DissertationType")
-                        .HasColumnType("int");
-
-                    b.Property<string>("FilePath")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("FromBachalavr")
                         .HasColumnType("bit");
@@ -182,34 +167,15 @@ namespace Kafedra.Persistence.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
-                    b.Property<string>("Manager")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<decimal>("Point")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime>("PublicationYear")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("QualificationId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Topic")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("QualificationId");
 
                     b.ToTable("Dissertations");
                 });
@@ -416,11 +382,7 @@ namespace Kafedra.Persistence.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("FacultyId")
+                    b.Property<int>("CurriculumId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
@@ -438,8 +400,6 @@ namespace Kafedra.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FacultyId");
-
                     b.ToTable("Subjects");
                 });
 
@@ -452,6 +412,9 @@ namespace Kafedra.Persistence.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("QualificationId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SubejectId")
                         .HasColumnType("int");
 
                     b.Property<int>("SubjectId")
@@ -804,17 +767,6 @@ namespace Kafedra.Persistence.Migrations
                     b.Navigation("Subject");
                 });
 
-            modelBuilder.Entity("Kafedra.Domain.Entities.Dissertation", b =>
-                {
-                    b.HasOne("Kafedra.Domain.Entities.Qualification", "Qualification")
-                        .WithMany("Dissertations")
-                        .HasForeignKey("QualificationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Qualification");
-                });
-
             modelBuilder.Entity("Kafedra.Domain.Entities.Qualification", b =>
                 {
                     b.HasOne("Kafedra.Domain.Entities.Faculty", "Faculty")
@@ -824,13 +776,6 @@ namespace Kafedra.Persistence.Migrations
                         .IsRequired();
 
                     b.Navigation("Faculty");
-                });
-
-            modelBuilder.Entity("Kafedra.Domain.Entities.Subject", b =>
-                {
-                    b.HasOne("Kafedra.Domain.Entities.Faculty", null)
-                        .WithMany("Subjects")
-                        .HasForeignKey("FacultyId");
                 });
 
             modelBuilder.Entity("Kafedra.Domain.Entities.SubjectQualification", b =>
@@ -972,14 +917,10 @@ namespace Kafedra.Persistence.Migrations
             modelBuilder.Entity("Kafedra.Domain.Entities.Faculty", b =>
                 {
                     b.Navigation("Qualifications");
-
-                    b.Navigation("Subjects");
                 });
 
             modelBuilder.Entity("Kafedra.Domain.Entities.Qualification", b =>
                 {
-                    b.Navigation("Dissertations");
-
                     b.Navigation("UserSubjects");
                 });
 

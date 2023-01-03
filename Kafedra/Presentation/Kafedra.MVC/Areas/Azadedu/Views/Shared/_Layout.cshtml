@@ -213,11 +213,15 @@
             </div>
             <!-- /.sidebar -->
         </aside>
+
         <div class="content-wrapper">
+
+
             <div class="row" style="margin-right:0px; margin-left:0px">
-                 @RenderBody()
+        @RenderBody()
+
             </div>
-        </>
+        </div>
         <!-- Content Wrapper. Contains page content -->
         <!-- /.content-wrapper -->
      
@@ -228,13 +232,8 @@
         </aside>
         <!-- /.control-sidebar -->
     </div>
-
     <!-- ./wrapper -->
     <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js" integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
-
 
 
     <script src="~/manage/plugins/jquery/jquery.min.js"></script>
@@ -276,9 +275,7 @@
     <script src="~/assets/vendor/toaster/toastr.min.js"></script>
 
     @RenderSection("Scripts", required: false)
-    @RenderSection("ScriptModal",false)
-
-
+    @RenderSection("ScriptModal",false);
     <script>
 
         $(function () {

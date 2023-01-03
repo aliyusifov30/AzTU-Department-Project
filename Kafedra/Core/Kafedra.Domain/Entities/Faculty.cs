@@ -11,7 +11,5 @@ namespace Kafedra.Domain.Entities
     {
         public string Name { get; set; }
         public ICollection<Qualification> Qualifications { get; set; }
-        
-        public ICollection<Subject> Subjects { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using Kafedra.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace Kafedra.Persistence
         {
             DbContextOptionsBuilder<KafedraContext> builder = new();
             builder.UseSqlServer(ServiceConfiguration.ConnectionString());
+            
             return new KafedraContext(builder.Options);
         }
     }

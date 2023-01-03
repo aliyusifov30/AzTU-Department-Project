@@ -11,7 +11,7 @@ namespace Kafedra.Persistence.Configurations
             builder.Property(x => x.Title).HasMaxLength(80).IsRequired();
             builder.Property(x => x.Title).HasMaxLength(500).IsRequired();
             builder.Property(x => x.IsDeleted).HasDefaultValue(false);
-            builder.HasQueryFilter(x => !x.IsDeleted);
+           
         }
     }
 }

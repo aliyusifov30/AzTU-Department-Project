@@ -10,5 +10,6 @@ namespace Kafedra.Domain.Entities
     public class Curriculum:BaseEntity
     {
         public string Name { get; set; }
+        public int SubjectId { get; set; }
     }
 }

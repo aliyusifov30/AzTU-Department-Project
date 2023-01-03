@@ -49,16 +49,17 @@
           <img src="~/assets/img/aztu_s_logo.png" class="w-25" />
         </div>
         <h2 class="fs-3">Login</h2>
+            <div style="padding-top: 2rem;padding-bottom: 1rem" asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="auth--inputBox">
                 <input asp-for="Email" autocomplete="off" autocomplete="off" required="required">
-              <span asp-validation-for="Email" class="text-danger"></span>
-                <span>Email</span>
+              <span asp-validation-for="Email" class="text-danger error-span"></span>
+                <p>Email</p>
             </div>
             <div class="auth--inputBox">
               <input asp-for="Password" id="id_password" required="required">
-                <i class="fas fa-eye fa-eye-slash" id="togglePassword" style=" position: absolute;right: 7%;top: 45%;cursor: pointer;z-index:10; color:white"></i>
-              <span asp-validation-for="Password" class="text-danger"></span>
-                <span>Password</span>
+                <i class="fas fa-eye fa-eye-slash" id="togglePassword" style="bottom: 12px;position: absolute;/* right: 7%; */right: 0;/* top: 45%; */cursor: pointer;z-index:10;color:white" aria-hidden="true"></i>
+              <span asp-validation-for="Password" class="text-danger error-span"></span>
+                <p>Password</p>
             </div>
             <div class="auth--links">
               <a asp-action="Register" asp-controller="Account" >Forgot password?</a>

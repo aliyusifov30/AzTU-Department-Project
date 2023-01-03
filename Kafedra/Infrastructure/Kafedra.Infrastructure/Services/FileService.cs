@@ -41,11 +41,11 @@ namespace Kafedra.Infrastructure.Services
             return fileName;
         }
 
-        public bool CheckFile(IFormFile file, int size , ref string _returnMessage , params string[] type)
+        public bool CheckImageValid(IFormFile file, int size , ref string _returnMessage , params string[] type)
         {
             if (!Extension.CheckSize(file, size))
             {
-                _returnMessage = $"The size of this file is {size}";
+                _returnMessage = $"The size of this photo is {size}";
                 return false;
             }
 
@@ -55,10 +55,6 @@ namespace Kafedra.Infrastructure.Services
                 {
                     _returnMessage = "The type is not correct";
                     return false;
-                }
-                else
-                {
-                    return true;
                 }
             }
            

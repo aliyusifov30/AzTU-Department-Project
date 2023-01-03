@@ -80,9 +80,33 @@
                                             <a asp-action="edit" asp-route-id="@item.Id" class="btn btn-outline-dark">
                                                 <i class="bi bi-pencil-square"></i>
                                             </a>
-                                            <a asp-action="delete" asp-route-id="@item.Id" class="btn btn-outline-dark btn-delete-sweet">
+                                            <a asp-action="Remove" asp-route-id="@item.Id" class="btn btn-outline-dark btn-delete-sweet">
                                                 <i class="bi bi-x-lg"></i>
                                             </a>
+                                                @if (item.IsDeleted == false)
+                                                {
+                                                    <a type="submit" class="btn btn-outline-dark"  asp-action=Delete asp-controller=Event asp-route-id=@item.Id>
+
+                                                        <i class="fas fa-solid fa-trash"></i>
+
+
+
+
+                                                    </a>
+                                                }
+                                                else
+                                                {
+
+                                                    <a type="submit" class="btn btn-outline-dark "  asp-action=Delete asp-controller=Event asp-route-id=@item.Id>
+
+                                                        <i class="fas fa-solid fa-trash-arrow-up"></i>
+
+
+
+
+                                                    </a>
+                                                }
+
                                         </td>
                                     </tr>
                                     }
