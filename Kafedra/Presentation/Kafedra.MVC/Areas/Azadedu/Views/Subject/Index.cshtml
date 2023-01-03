@@ -49,6 +49,7 @@
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Name</th>
+                                        <th scope="col">Curriculum</th>
                                         <th scope="col">Created At</th>
                                         <th scope="col">Update At</th>
                                         <th scope="col">Status</th>
@@ -65,6 +66,7 @@
                                                 @(count++)
                                             </th>
                                             <td>@item.Name</td>
+                                            <td>@item.CurriculumId</td>
                                             <td>@item.CreatedAt</td>
                                             <td>@item.UpdatedAt</td>
                                             <td>@item.IsDeleted</td>
@@ -72,20 +74,9 @@
                                                 <a asp-action="edit" asp-route-id="@item.Id" class="btn btn-outline-dark">
                                                     <i class="bi bi-pencil-square"></i>
                                                 </a>
-                                                @if (item.IsDeleted)
-                                                {
-                                                    <a asp-action="recover" asp-route-id="@item.Id" class="btn btn-outline-dark">
-                                                        <i class="bi bi-arrow-bar-up"></i>
-                                                    </a>
-                                                    
-                                                }
-                                                else
-                                                {
-                                                    <a asp-action="delete" asp-route-id="@item.Id" class="btn btn-outline-dark btn-delete-sweet">
-                                                        <i class="bi bi-x-lg"></i>
-                                                    </a>
-                                                }
-                                                
+                                                <a asp-action="delete" asp-route-id="@item.Id" class="btn btn-outline-dark btn-delete-sweet">
+                                                    <i class="bi bi-x-lg"></i>
+                                                </a>
                                             </td>
                                         </tr>
                                     }

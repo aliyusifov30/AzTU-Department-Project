@@ -45,51 +45,52 @@
         </div>
         <h2 class="fs-3">Register</h2>
         <div class="row">
+                <div style="padding-top: 2rem;padding-bottom: 1rem" asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="auth--inputBox col-sm-6">
                     <input asp-for="Name" autocomplete="off" required="required" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
+                    <p>First Name</p>
+                    <span asp-validation-for="Name" class="text-danger error-span"></span>
 
-                    <span>First Name</span>
                 </div>
                 <div class="auth--inputBox col-sm-6">
                     <input asp-for="Surname" autocomplete="off" required="required" />
-                    <span asp-validation-for="Surname" class="text-danger"></span>
+                    <p>Last Name</p>
+                    <span asp-validation-for="Surname" class="text-danger error-span"></span>
 
-                    <span>Last Name</span>
                 </div>
         </div>
          <div class="row">
                 <div class="auth--inputBox col-sm-6">
                     <input asp-for="UserName" autocomplete="off" required="required" />
-                    <span asp-validation-for="UserName" class="text-danger"></span>
+                    <p>User Name</p>
+                    <span asp-validation-for="UserName" class="text-danger error-span"></span>
 
-                    <span>User Name</span>
                 </div>
                 <div class="auth--inputBox col-sm-6">
                     <input asp-for="Email" autocomplete="off" required="required" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
-                    <span>Email</span>
+                    <p>Email</p>
+                    <span asp-validation-for="Email" class="text-danger error-span"></span>
                 </div>
          </div>
           <div class="row">
                 <div class="auth--inputBox col-sm-6">
                     <input asp-for="Password" required />
-                    <span asp-validation-for="Password" class="text-danger"></span>
+                    <p>Password</p>
+                    <span asp-validation-for="Password" class="text-danger error-span"></span>
 
-                    <span>Password</span>
                 </div>
+
                 <div class="auth--inputBox col-sm-6">
                     <input asp-for="ConfirmPasword" required />
-                    <span asp-validation-for="ConfirmPasword" class="text-danger"></span>
-
-                    <span>Confirm Password</span>
+                    <p>Confirm Password</p>
+                    <span asp-validation-for="ConfirmPasword" class="text-danger error-span"></span>
                 </div>
           </div>
         
        
         <div class="auth--links">
                 <div class="d-flex justify-content-center align-items-center">
-                    <input asp-for="FromAztu" required="required" />
+                    <input asp-for="FromAztu"/>
                     <label class="text-white" style="margin-left:10px"  for="cb1">AzTU telebesiyem</label>
                 </div>
           <a asp-action="Login" asp-controller="Account">Sign In</a>

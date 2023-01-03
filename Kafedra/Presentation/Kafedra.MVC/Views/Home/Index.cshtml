@@ -1,4 +1,4 @@
-﻿@using Kafedra.Application.ViewModel.Home
+@using Kafedra.Application.ViewModel.Home
 @model HomeVM
 @{
     ViewData["Title"] = "Ana Səhifə";
@@ -12,14 +12,14 @@
     <div id="carouselExampleCaptions" class="carousel slide carousel-fade z-depth-1-half"
          data-bs-ride="carousel">
         <div class="carousel-indicators">
-         
-                    @foreach (var item in Model.Sliders)
-                    {
-                         <button type="button" class="@(slidercount==0 ? "active" : " ")" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="@slidercount"
+
+            @foreach (var item in Model.Sliders)
+            {
+                <button type="button" class="@(slidercount==0 ? "active" : " ")" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="@slidercount"
                     aria-label="Slide @slidercount+1"></button>
                 slidercount++;
             }
-           
+
         </div>
         <div class="carousel-inner">
             @foreach (var slider in Model.Sliders)
@@ -28,7 +28,7 @@
                     <img src="~/assets/img/@slider.Image" class="d-block w-100 darkened-image" data-bs-interval="100"
                      alt="..." />
                     <div class="carousel-caption">
-                        <p>Kompüter Texnologiyaları kafedrasına xoş gəlmisiniz!</p>
+                        <p>Kompüter Texnologiyaları <br> kafedrasına xoş gəlmisiniz!</p>
                     </div>
                 </div>
                 sliderNum++;
@@ -47,82 +47,78 @@
     </div>
 </div>
 
-  <div class="events-section section">
-            <div class="container">
-                <div class="section-head">
-                    <div class="section-head-name">
-                        <h3>Tədbirlər</h3>
-                    </div>
-                    <div class="section-head-more">
-                        <a href="#">Bütün tədbirlər >></a>
-                    </div>
-                </div>
-                <div class="section-body">
-                    <div class="events">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-12">
-                                <div class="last-event">
-                                    <div class="event">
-                                        <a href="#">
-                                            <div class="event-cover big-event-cover">
-                                                <span class="date">@Model.Event.UpdatedAt.Hour:@Model.Event.UpdatedAt.Minute / @Model.Event.UpdatedAt.Day.@Model.Event.UpdatedAt.Month.@Model.Event.UpdatedAt.Year</span><img
-                                                    src="~/assets/img/@Model.Event.Image"
-                                                    alt="" />
-                                            </div>
-                                            <div class="event-bottom">
-                                                <div class="event-title">
-                                                    <div class="test-date">
-                                                        <span class="day">17</span>
-                                                        <span class="month">OKT</span>
-                                                    </div>
-                                                    <p>@Model.Event.Title</p>
-                                                </div>
-                                                <div class="event-about">
-                                                    <p>@Model.Event.Content</p>
-                                                </div>
-                                            </div>
-                                        </a>
 
-                                    </div>
+
+
+<div class="events-section section">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-head-name">
+                <h3>Tədbirlər</h3>
+            </div>
+            <div class="section-head-more">
+                <a asp-controller="Event" asp-action="AllEvents">
+                    Bütün tədbirlər
+                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+        <div class="section-body">
+            <div class="events">
+                <div class="row">
+                    @foreach (var @ev in Model.Events)
+                    {
+                        <div class="news-card">
+                            <a href="#" class="news-card__card-link"></a>
+                            <img src="~/assets/img/@ev.Image"
+                             alt=""
+                             class="news-card__image" />
+                            <div class="news-card__text-wrapper">
+                                <h2 class="news-card__title">
+                                    @ev.Title
+                                </h2>
+                                <div class="news-card__post-date">@ev.CreatedAt</div>
+                                <div class="news-card__details-wrapper">
+                                    <p class="news-card__excerpt">
+                                        @ev.Content
+                                    </p>
+                                    <a asp-controller="Event" asp-action="Detail" asp-route-id="@ev.Id" class="news-card__read-more">
+                                        Read more <i class="fas fa-long-arrow-alt-right"></i>
+                                    </a>
                                 </div>
-
-                            </div>
-                            <div class="col-lg-6 col-md-12">
-                                <div class="side-events">
-                                    <div class="row">
-                                       @foreach (var ev in Model.Events)
-                                       {
-                                            <div class="col-lg-6 col-md-6">
-                                            <div class="event">
-                                                <a href="#">
-                                                    <div class="event-cover">
-                                                        <span class="date">@Model.Event.UpdatedAt.Hour:@Model.Event.UpdatedAt.Minute / @Model.Event.UpdatedAt.Day.@Model.Event.UpdatedAt.Month.@Model.Event.UpdatedAt.Year</span><img
-                                                    src="~/assets/img/@Model.Event.Image"
-                                                    alt="" />
-                                                    </div>
-                                                    <div class="event-bottom">
-                                                        <div class="event-title">
-                                                            <p>@ev.Title</p>
-                                                        </div>
-                                                        <div class="event-about">
-                                                            <p>@ev.Content</p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                            </div>
-                                        </div>
-                                       }
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
+                    }
+                    @if (Model.Event != null)
+                    {
+                        <div class="news-card">
+                            <a href="#" class="news-card__card-link"></a>
+                            <img src="~/assets/img/@Model.Event.Image"
+                             alt=""
+                             class="news-card__image" />
+                            <div class="news-card__text-wrapper">
+                                <h2 class="news-card__title">
+                                    @Model.Event.Title
+                                </h2>
+                                <div class="news-card__post-date">@Model.Event.CreatedAt</div>
+                                <div class="news-card__details-wrapper">
+                                    <p class="news-card__excerpt">
+                                        @Model.Event.Content
+                                    </p>
+                                    <a href="#" class="news-card__read-more">
+                                        Read more <i class="fas fa-long-arrow-alt-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
 
-                    </div>
+                    <!-- <p class="fw-bolder fs-1 text-primary text-center">No news found =(</p> -->
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
 <div class="announcements-section section">
     <div class="container">
@@ -139,31 +135,28 @@
                 @foreach (var announcement in Model.Announcements)
                 {
                     <div class="col-lg-3 col-md-6">
-                    <div class="announcement ann-test">
-                        <div class="ann-layer"></div>
-                        <div class="ann-link">
-                            <a href="~/assets/announcement.html"><span class="ann-link-details">Ətraflı</span></a>
+                        <div class="announcement ann-test">
+                            <div class="ann-layer"></div>
+                            <div class="ann-link">
+                                <a href="~/assets/announcement.html"><span class="ann-link-details">Ətraflı</span></a>
 
-                        </div>
-                        <div class="announcement-top">
-                            <i class="fa-regular fa-calendar-days"></i>
-                            <span class="date">@announcement.UpdatedAt.Hour:@announcement.UpdatedAt.Minute / @announcement.UpdatedAt.Day.@announcement.UpdatedAt.Month.@announcement.UpdatedAt.Year</span>
-                        </div>
-                        <div class="announcement-body">
-                            <div class="announcement-title">
-                                <a href="#">@announcement.Title</a>
                             </div>
-                            <div class="announcement-about">
-                                <p>
-                                  @*  @if(announcement.Content.Length > 0){
-                                            @announcement.Content.Substring(0, 100)
-                                            Html.Raw("...");
-                                        }*@
-                                </p>
+                            <div class="announcement-top">
+                                <i class="fa-regular fa-calendar-days"></i>
+                                <span class="date">@announcement.UpdatedAt.Hour:@announcement.UpdatedAt.Minute / @announcement.UpdatedAt.Day.@announcement.UpdatedAt.Month.@announcement.UpdatedAt.Year</span>
+                            </div>
+                            <div class="announcement-body">
+                                <div class="announcement-title">
+                                    <a href="#">@announcement.Title</a>
+                                </div>
+                                <div class="announcement-about">
+                                    <p>
+                                        @(announcement.Content.Length<=100?announcement.Content:announcement.Content.Substring(0,100)+"...")
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 }
             </div>
         </div>
@@ -184,11 +177,11 @@
             @foreach (var partner in Model.Partners)
             {
                 <div class="item">
-                <a href="#">
-                    <img src="~/assets/img/@partner.Image"
+                    <a href="#">
+                        <img src="~/assets/img/@partner.Image"
                          alt="" />
-                </a>
-            </div>
+                    </a>
+                </div>
             }
         </div>
     </div>

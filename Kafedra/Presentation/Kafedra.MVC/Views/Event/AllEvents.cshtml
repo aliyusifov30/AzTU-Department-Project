@@ -1,0 +1,55 @@
+﻿@using Kafedra.Application.ViewModel.Home
+@model HomeVM
+@{
+    ViewData["Title"] = "AllEvent";
+}
+
+<div class="page-head">
+      <img src="~/assets/img/default-cover.jpg" alt="" />
+      <p>All News</p>
+    </div>
+    <div class="container py-5">
+      <div class="my-3 row">
+        @foreach (var ev in Model.Events)
+        {
+            <div class="news-card">
+          <a href="#" class="news-card__card-link"></a>
+          <img
+            src="~/assets/img/@ev.Image"
+            alt=""
+            class="news-card__image"
+          />
+          <div class="news-card__text-wrapper">
+            <h2 class="news-card__title">
+              @ev.Title
+            </h2>
+            <div class="news-card__post-date">Jan 29, 2018</div>
+            <div class="news-card__details-wrapper">
+              <p class="news-card__excerpt">
+                @ev.Content
+              </p>
+              <a asp-controller="Event" asp-action="Detail" asp-route-id="@ev.Id" class="news-card__read-more"
+                >Read more <i class="fas fa-long-arrow-alt-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+      <nav aria-label="...">
+        <ul class="pagination">
+          <li class="page-item disabled">
+            <a class="page-link">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item active" aria-current="page">
+            <a class="page-link" href="#">2</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+

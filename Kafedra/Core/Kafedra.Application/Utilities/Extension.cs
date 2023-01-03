@@ -11,7 +11,7 @@ namespace Kafedra.Application.Utilities
     {
         public static bool CheckType(IFormFile file, string type)
         {
-            if (!file.ContentType.Contains(type))
+            if (!file.ContentType.Contains("image/"))
             {
                 return false;
             }

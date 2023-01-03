@@ -11,9 +11,6 @@ namespace Kafedra.Domain.Entities
     {     
         public string Name { get; set; }
         public ICollection<SubjectQualification> UserSubjects { get; set; }
-
-        public ICollection<Dissertation> Dissertations { get; set; }
-        
         public int FacultyId { get; set; }
         public Faculty Faculty { get; set; }
     }

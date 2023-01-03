@@ -12,6 +12,6 @@ namespace Kafedra.Application.Abstractions.Storages
     {
         Task<string> UploadAsync(string path, IFormFile formFile);
         void DeleteAsync(string root, string folder, string filename);
-        bool CheckFile(IFormFile file, int size, ref string _returnMessage, params string[] type);
+        bool CheckImageValid(IFormFile file, int size, ref string _returnMessage, params string[] type);
     }
 }

@@ -2,7 +2,7 @@
     ViewData["Title"] = "Create";
 }
 
-@model SubjectCreateDto
+@model Subject
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -31,7 +31,7 @@
                                     <span asp-validation-for="Name" class="text-danger"></span>
                                 </div>
 
-                                <button type="submit" class="btn btn-outline-dark my-3">Submit</button>
+                                <button type="submit" class="btn btn-primary my-3">Submit</button>
                             </form>
                         </div>
                     </div>
@@ -43,3 +43,14 @@
 </div>
 
 
+@section Scripts{
+    <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
+
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+}

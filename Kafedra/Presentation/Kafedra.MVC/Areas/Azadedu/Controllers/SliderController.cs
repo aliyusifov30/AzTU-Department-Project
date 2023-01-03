@@ -79,6 +79,8 @@ namespace Kafedra.MVC.Areas.Azadedu.Controllers
         {
             try
             {
+               var slider=  await _sliderRepository.GetByIdAsync(id);
+               Helper.RemoveFile(_env.WebRootPath,"img",slider.Image);
                 await _sliderRepository.DeleteAsync(id);
                 await _sliderRepository.Save();
                 return RedirectToAction(nameof(Index));
@@ -105,7 +107,7 @@ namespace Kafedra.MVC.Areas.Azadedu.Controllers
                 _errorMessage = $"{eventVM.Photo.FileName}-faylin novu Ferqlidir!";
                 return false;
             }
-            if (!eventVM.Photo.CheckFileSize(50))
+            if (!eventVM.Photo.CheckFileSize(300))
             {
                 _errorMessage = $"{eventVM.Photo.FileName}- faylin olcusu boyukdur!";
                 return false;

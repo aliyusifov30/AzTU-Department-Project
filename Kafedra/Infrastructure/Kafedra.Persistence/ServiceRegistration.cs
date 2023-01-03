@@ -12,6 +12,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NETCore.MailKit.Extensions;
+using NETCore.MailKit.Infrastructure.Internal;
 
 namespace Kafedra.Persistence
 {
@@ -25,8 +27,12 @@ namespace Kafedra.Persistence
             }).AddIdentity<AppUser, IdentityRole>(x =>
             {
                 x.Password.RequiredLength = 5;
+              //  x.Tokens.EmailConfirmationTokenProvider = "emailconfirmation";
+                x.SignIn.RequireConfirmedEmail = true;
+                x.User.RequireUniqueEmail = true;
                 //todo we will change here or add somethings
-            }).AddEntityFrameworkStores<KafedraContext>();
+            }).
+            AddEntityFrameworkStores<KafedraContext>().AddDefaultTokenProviders();
             services.AddScoped<IAnnouncementRepository, AnnouncementRepository>();
             services.AddScoped<ICurriculumRepository, CurriculumRepository>();
             services.AddScoped<IDepartmentRepository, DepartmentRepository>();

@@ -22,8 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Views\Home\" />
     <Folder Include="wwwroot\uploads\events\" />
-    <Folder Include="wwwroot\uploads\dissertations\" />
   </ItemGroup>
 
 </Project>

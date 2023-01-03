@@ -3,6 +3,7 @@ using Kafedra.Application.DTOs;
 using Kafedra.Application.DTOs.EventDTOs;
 using Kafedra.Application.Interfaces.Repostories.Common;
 using Kafedra.Application.Utilities;
+using Kafedra.Application.Utilities.File;
 using Kafedra.Application.ViewModel.Event;
 using Kafedra.Application.ViewModel.Home;
 using Kafedra.Domain.Entities;
@@ -32,7 +33,7 @@ namespace Kafedra.MVC.Areas.Azadedu.Controllers
  
         public async Task<IActionResult> Index(int page = 1)
         {
-            var events = _eventRepository.GetAll(x=>x.IsDeleted==false);
+            var events = _eventRepository.GetAll();
             ViewBag.PageSize = 8;
             return View(PagenatedListDto<Event>.Save(events, page, 8));
         }
@@ -62,11 +63,14 @@ namespace Kafedra.MVC.Areas.Azadedu.Controllers
             }
 
             var arr = time.Split("-");
-       
-            DateTime startTime = Convert.ToDateTime(arr[0]);
-            DateTime endTime = Convert.ToDateTime(arr[1]);
 
-            bool checkImage = _fileService.CheckFile(createDto.ImageFile, 5000, ref _errorMessage, "image/jpeg", "image/png");
+
+            
+
+            DateTime startTime = DateTime.ParseExact(arr[0],"dd/MM/yyyy HH:mm",null);
+            DateTime endTime = DateTime.ParseExact(arr[1], "dd/MM/yyyy HH:mm", null);
+
+            bool checkImage = _fileService.CheckImageValid(createDto.ImageFile, 10485760 , ref _errorMessage, "image/jpeg", "image/png");
 
             if (checkImage == false)
             {
@@ -151,7 +155,7 @@ namespace Kafedra.MVC.Areas.Azadedu.Controllers
             {
                 _fileService.DeleteAsync(_env.WebRootPath, "/uploads/events/", eventItem.Image);
 
-                bool checkImage = _fileService.CheckFile(eventEditDto.ImageFile, 10485760, ref _errorMessage, "image/jpeg", "image/png");
+                bool checkImage = _fileService.CheckImageValid(eventEditDto.ImageFile, 10485760, ref _errorMessage, "image/jpeg", "image/png");
 
                 if (checkImage == false)
                 {
@@ -181,14 +185,32 @@ namespace Kafedra.MVC.Areas.Azadedu.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
-            var eventItem = await _eventRepository.GetAll().FirstOrDefaultAsync(x => x.Id == id);
+            var eventItem = await _eventRepository.GetByIdAsync(id);
          
             if (eventItem == null)
             {
                 return NotFound();
             }
 
-            eventItem.IsDeleted = true;
+             _eventRepository.UnActive(eventItem);
+            await _eventRepository.Save();
+
+            return RedirectToAction("index");
+        }
+
+
+        public async Task<IActionResult> Remove(int id)
+        {
+            var eventItem = await _eventRepository.GetByIdAsync(id);
+
+            if (eventItem == null)
+            {
+                return NotFound();
+            }
+            Helper.RemoveFile(_env.WebRootPath, "img", eventItem.Image);
+
+            await _eventRepository.DeleteAsync(id);
+
             await _eventRepository.Save();
 
             return RedirectToAction("index");

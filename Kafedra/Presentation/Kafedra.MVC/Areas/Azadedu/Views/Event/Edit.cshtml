@@ -1,18 +1,16 @@
-﻿@model PagenatedListDto<Event>
-@{
-    int count = (Model.PageIndex - 1) * ViewBag.PageSize + 1;
+﻿@{
+    ViewData["Title"] = "Edit";
 }
+
+@model EventEditDto
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-12 d-flex">
-                    <h1 class="align-items-center" style="width:100%;">Events</h1>
-                    <a asp-action="create" class="align-items-center" style="display: flex; justify-content: flex-end;color:black;">
-                        <i class="bi bi-plus-circle-fill"></i>
-                    </a>
+                <div class="col-sm-12" style="padding: 20px; display: flex; justify-content: center; align-items: center;">
+                    <h1>Edit Event</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -22,111 +20,46 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                @*<div class="col-lg-12">
-                <form method="get" asp-action="index">
-                <div class="form-group">
-                <label>Select</label>
-                <select class="form-control" name="orderStatus">
-                <option value="">Accepted</option>
-                <option value="">Pending</option>
-                <option value="OrderStatus.Rejected">Rejected</option>
-                <option value="DSLTD.Enums.OrderStatus.Canceled">Canceled</option>
-                </select>
-                </div>
-                <button type="submit" class="btn btn-outline-dark mb-3">Save</button>
-                <a asp-action="ExportToExcel" style="color:black;font-size:30px;float:right;">
-                <i class="bi bi-file-earmark-arrow-down"></i>
-                </a>
-                </form>
-                </div>*@
                 <div class="col-12">
                     <div class="row">
                         <div class="col-lg-12">
-                            <table class="table table-striped projects">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">Image</th>
-                                        <th scope="col">Title</th>
-                                        <th scope="col">About</th>
-                                        <th scope="col">Start Date</th>
-                                        <th scope="col">End Date</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">
-                                            Actions :
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (Event item in Model)
-                                    {
-                                        <tr>
-                                            <th scope="row" style=" vertical-align: middle;">
-                                                @(count++)
-                                            </th>
-                                            <td>
-                                                <div class="image-box">
-                                                    <img src="~/uploads/events/@item.Image" style="height:200px;width:200px;object-fit:contain">
-                                                </div>
-                                                <img>
-                                            </td>
-                                            <td>@item.Title</td>
-                                            <td>@item.Content</td>
-                                            <td>@item.StartTime</td>
-                                            <td>@item.EndTime</td>
-                                            <td>@item.IsDeleted</td>
-                                            <td>
-                                                <a asp-action="edit" asp-route-id="@item.Id" class="btn btn-outline-dark">
-                                                    <i class="bi bi-pencil-square"></i>
-                                                </a>
-                                                <a asp-action="delete" asp-route-id="@item.Id" class="btn btn-outline-dark btn-delete-sweet">
-                                                    <i class="bi bi-x-lg"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    }
-                                </tbody>
-                            </table>
+                            <form method="post" enctype="multipart/form-data">
 
-                            <nav aria-label="Page navigation example" class="d-flex justify-content-center align-items-center">
-                                <ul class="pagination">
+                                <input type="hidden" value="@Model.Id" />
+                                <div class="mb-3">
+                                    <label asp-for="Title" class="form-label">Title</label>
+                                    <input asp-for="Title" class="form-control">
+                                    <span asp-validation-for="Title" class="text-danger"></span>
+                                </div>
 
-                                    @if (Model.HasPrev)
-                                    {
-                                        <li class="page-item">
-                                            <a class="page-link" asp-action="index" asp-route-page="@(Model.PageIndex - 1)" asp-route-word="@TempData["Word"]" aria-label="Previous">
-                                                <span aria-hidden="true">&laquo;</span>
-                                            </a>
-                                        </li>
-                                    }
-                                    @for (int i = 1; i <= Model.TotalPage; i++)
-                                    {
-                                        if (Model.PageIndex - 1 == i)
-                                        {
-                                            <li class="page-item"><a class="page-link" asp-action="index" asp-route-page="@i" asp-route-word="@TempData["Word"]">@i</a></li>
-                                        }
+                                <div class="mb-3">
+                                    <label asp-for="ImageFile" class="form-label">ImageFile</label>
+                                    <input asp-for="ImageFile" class="form-control img-upload-input">
+                                    <span class="text-danger" asp-validation-for="ImageFile"></span>
+                                </div>
+                                <div class="img-box-big d-flex justify-content-center align-items-center">
+                                <img src="~/uploads/events/@Model.Image" style="width:400px;height:400px;object-fit:contain;" />
+                                </div>
 
-                                        if (Model.PageIndex == i)
-                                        {
-                                            <li class="page-item active"><a class="page-link" style=" z-index: 3; color: #fff; background-color: black !important; border-color: black !important;" asp-route-word="@TempData["Word"]" asp-action="index" asp-route-page="@i">@i</a></li>
-                                        }
-                                        if (Model.PageIndex + 1 == i)
-                                        {
-                                            <li class="page-item"><a class="page-link" asp-action="index" asp-route-page="@i" asp-route-word="@TempData["Word"]">@i</a></li>
-                                        }
-                                    }
-                                    @if (Model.HasNext)
-                                    {
-                                        <li class="page-item">
-                                            <a class="page-link" asp-action="index" asp-route-page="@(Model.PageIndex + 1)" asp-route-word="@TempData["Word"]" aria-label="Next">
-                                                <span aria-hidden="true">&raquo;</span>
-                                            </a>
-                                        </li>
-                                    }
+                                <div class="mb-3">
+                                    <label asp-for="Content" class="form-label">Content</label>
+                                    <textarea asp-for="Content" class="form-control" id="editor" rows="3"></textarea>
+                                    <span class="text-danger" asp-validation-for="Content"></span>
+                                </div>
 
-                                </ul>
-                            </nav>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="far fa-clock"></i></span>
+                                            </div>
+                                            <input type="datetime" name="time" class="form-control float-right datepicker" id="reservationtime">
+                                        </div>
+                                    </div>
+                                </div>
 
+                                <button type="submit" class="btn btn-outline-dark">Submit</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -136,11 +69,132 @@
     <!-- /.content -->
 </div>
 
-@section Scripts{
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
 
-    <script src="~/manage/main.js"></script>
+
+@section Scripts{
+
+
+
+
+
+    <script>
+
+        //$('#reservationtime').daterangepicker({
+        //    "autoApply": true,
+        //    "startDate": startDate, // viewda gorsenen baslangic deyer
+        //    "endDate": moment().startOf('hour').add(32, 'hour'), // viewda gorsenen son deyer
+        //    "minDate": startDate, // viewda gorsenen limitin min deyeri
+        //    "maxDate": moment(), // viewda gorsenen limitin max deyeri
+        //    locale: {
+        //        format: 'DD/MM/YYYY'
+        //    }
+        //    }, function(start, end, label) {
+        //      console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+        //});
+
+
+        console.log("as")
+
+        var startDay = @TempData["StartDay"];
+        var startMonth = @TempData["StartMonth"];
+        var startYear = @TempData["StartYear"];
+
+        var startHour = @TempData["StartHour"];
+        var startMin = @TempData["StartMin"];
+
+
+        var sstartDay = @TempData["SelectStartDay"];
+        var sstartMonth = @TempData["SelectStartMonth"];
+        var sstartYear = @TempData["SelectStartYear"];
+
+        var sstartHour = @TempData["SelectStartHour"];
+        var sstartMin = @TempData["SelectStartMin"];
+
+
+        var estartDay = @TempData["SelectEndDay"];
+        var estartMonth = @TempData["SelectEndMonth"];
+        var estartYear = @TempData["SelectEndYear"];
+
+        var estartHour = @TempData["SelectEndHour"];
+        var estartMin = @TempData["SelectEndMin"];
+
+
+        var date = startDay + "/" + startMonth + "/" + startYear;
+        var sstartDate = sstartDay + "/" + sstartMonth +"/" + sstartYear + " " + sstartHour + ":" + estartMin;
+        var endDate = estartDay + "/" + estartMonth +"/" + estartYear + " " + estartHour + ":" + estartMin;
+
+        console.log(date);
+        console.log(sstartDate);
+        console.log(endDate);
+
+
+        ////$('input[name="datetimes"]').daterangepicker({
+        ////    timePicker: true,
+        ////    startDate: date,
+        ////    endDate: moment(),
+        ////    minDate:date,
+        ////    locale: {
+        ////        format: 'DD/MM/YYYY hh:mm A'
+        ////    }
+        ////});
+
+        $('#reservationtime').daterangepicker({
+            timePicker: true,
+            "autoApply": true,
+            "startDate": sstartDate, // viewda gorsenen baslangic deyer
+            //"endDate": moment().startOf('day').add(32, 'hour'), // viewda gorsenen son deyer
+            //"maxDate": moment().startOf('day').add(32, 'hour'),
+            locale: {
+                format: 'DD/MM/YYYY hh:mm'
+            }
+        }, function (start, end, label) {
+            console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+        });
+
+    </script>
+
+
+
+    @await Html.PartialAsync("_ValidationPartial")
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/32.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 }
 
 
 
+@section Links{
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/manage/plugins/fontawesome-free/css/all.min.css">
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="~/manage/plugins/daterangepicker/daterangepicker.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="~/manage/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Bootstrap Color Picker -->
+    <link rel="stylesheet" href="~/manage/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="~/manage/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="~/manage/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="~/manage/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <!-- Bootstrap4 Duallistbox -->
+    <link rel="stylesheet" href="~/manage/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
+    <!-- BS Stepper -->
+    <link rel="stylesheet" href="~/manage/plugins/bs-stepper/css/bs-stepper.min.css">
+    <!-- dropzonejs -->
+    <link rel="stylesheet" href="~/manage/plugins/dropzone/min/dropzone.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/manage/dist/css/adminlte.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+}
