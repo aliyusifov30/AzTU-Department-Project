@@ -5,19 +5,33 @@
     int count = 1;
 }
 
+<div class="content-wrapper">
 
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-12 d-flex">
+                    <h1 class="align-items-center" style="width:100%;">Announcement</h1>
+                   <a style="pos"  asp-action=Create asp-controller=Announcement asp-area=Azadedu class="btn btn-app bg-success">
 
+                        <i class="fas fa-solid fa-plus"></i> Create
+                                </a>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+  <section class="content">
     <div class="container-fluid">
-       
+        <div class="row">
 
      <div class="col-12">
         <div class="card">
-            <div class="card-header">
+          @*  <div class="card-header">
                 <h3 class="card-title">Announcements Table    <a style="pos"  asp-action=Create asp-controller=Announcement asp-area=Azadedu class="btn btn-app bg-success">
 
                         <i class="fas fa-solid fa-plus"></i> Create
                                 </a></h3>
-            </div>
+            </div>*@
             <!-- ./card-header -->
             <div class="card-body">
                 <table class="table table-bordered table-hover">
@@ -115,6 +129,10 @@
            
         </div>
         </div>
+    </div>
+    
+</section>
+ </div>
            <!-- /.card -->
     @section ScriptModal{
         @*<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>*@
